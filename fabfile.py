@@ -13,7 +13,7 @@ def deploy():
     # 文字通りcd
     with cd("/home/tekitoh/"):
         run("sudo docker pull youkidearitai/php7-tmcmaker")
-        run("sudo docker build -t youkidearitai/php7-tmcmaker:php7-tmcmaker /home/tekitoh/")
+        run("sudo docker build --no-cache -t youkidearitai/php7-tmcmaker:php7-tmcmaker /home/tekitoh/")
         run("sudo systemctl stop php7-tmcmaker-docker.service")
         run("sudo systemctl start php7-tmcmaker-docker.service")
 
