@@ -15,6 +15,7 @@ RUN apt-get clean
 ADD conf/apache2/01-tekitoh-memdhoi.conf /etc/apache2/sites-available/
 ADD conf/apache2/02-img-tekitoh-memdhoi.conf /etc/apache2/sites-available/
 ADD conf/apache2/php7.conf /etc/apache2/mods-available/
-RUN a2enmod php7 && a2enmod rewrite
+ADD conf/apache2/status.conf /etc/apache2/mods-available/
+RUN a2enmod php7 && a2enmod rewrite && a2enmod status
 RUN a2ensite 01-tekitoh-memdhoi && a2ensite 02-img-tekitoh-memdhoi
 
