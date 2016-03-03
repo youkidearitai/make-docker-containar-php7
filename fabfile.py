@@ -19,6 +19,7 @@ def push():
 def deploy():
     # ssh_configを使えるようにする
     env.use_ssh_config = True
+    push()
 
     # 文字通りcd
     with cd("/home/tekitoh/"):
